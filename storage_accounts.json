@@ -1,0 +1,118 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "stgaccount1": {
+        "type": "string",
+        "defaultValue": "azureb12straccount1",
+        "metadata": {
+          "description": "Storage Account Name 1."
+        }
+      },
+      "stgaccount2": {
+        "type": "string",
+        "defaultValue": "azureb12straccount2",
+        "metadata": {
+          "description": "Storage Account Name 2."
+        }
+      },
+      "stgaccount3": {
+        "type": "string",
+        "defaultValue": "azureb12straccount3",
+        "metadata": {
+          "description": "Storage Account Name 3."
+        }
+      },
+      "stgaccount4": {
+        "type": "string",
+        "defaultValue": "azureb12straccount4",
+        "metadata": {
+          "description": "Storage Account Name 4."
+        }
+      }
+    },
+    "variables": {
+        "Environment": "Development",
+        "Owner": "JavaDevTeam"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "location": "eastus",
+            "name": "[parameters('stgaccount1')]",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "tags": {
+                "Env": "[variables('Environment')]",
+                "Owner": "[variables('Owner')]"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "location": "eastus",
+            "name": "[parameters('stgaccount2')]",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "tags": {
+                "Env": "[variables('Environment')]",
+                "Owner": "[variables('Owner')]"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "location": "eastus",
+            "name": "[parameters('stgaccount3')]",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "tags": {
+                "Env": "[variables('Environment')]",
+                "Owner": "[variables('Owner')]"
+            }
+        },
+         {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "location": "eastus",
+            "name": "[parameters('stgaccount4')]",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "tags": {
+                "Env": "[variables('Environment')]",
+                "Owner": "[variables('Owner')]"
+            }
+        }
+    ],
+    "outputs": {
+        "storageaccount1": {
+        "type": "string",
+        "value": "[parameters('stgaccount1')]"
+      },
+      "storageaccount2": {
+        "type": "string",
+        "value": "[parameters('stgaccount2')]"
+      },
+      "storageaccount3": {
+        "type": "string",
+        "value": "[parameters('stgaccount3')]"
+      },
+      "storageaccount4": {
+        "type": "string",
+        "value": "[parameters('stgaccount4')]"
+      }
+    }
+}

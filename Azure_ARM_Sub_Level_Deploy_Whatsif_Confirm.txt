@@ -1,0 +1,3 @@
+New-AzSubscriptionDeployment -WhatIf -Name SubLevelDeploy1 -TemplateFile .\SubLevelDeploy.json -stgaccount1 "engazureb03str001" -stgaccount2 "engazureb03str002" -stgaccount3 "engazureb03str003" -Location eastus
+
+New-AzSubscriptionDeployment -Confirm -Name SubLevelDeploy1 -TemplateFile .\SubLevelDeploy.json -stgaccount1 "engazureb03str001" -stgaccount2 "engazureb03str002" -stgaccount3 "engazureb03str003" -Location eastus
